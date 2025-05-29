@@ -606,7 +606,7 @@ z-index: -1;
 /*////////////////////////////////////////PRODUCT DETAILS PAGE (details.html)/////////////////////////////////////////////////////////////////*/
 /*////////////////////////////////////////PRODUCTS.HTML/////////////////////////////////////////////////////////////////*/
 .container{
-    width: 1500px;
+    width: 70vw;
     margin: auto;
     max-width: 100vw;
     text-align: center;
@@ -640,7 +640,7 @@ z-index: -1;
 }
 .listProduct .item img {
     width: 100%;
-    height: 550px; /* Force consistent image height */
+    height: 30vw; /* Force consistent image height */
     object-fit: cover;
     border-radius: 8px;
 }
