@@ -1,37 +1,56 @@
 [
     {
-    "id": "Mpants1",
+    "id": "1",
     "name": "Men Brown Textured Trousers",
     "description": "Men's brown trousers. Made from the finest materials, perfect for everyday use",
     "price": 49.99,
-    "image": "prodsnim/Mpants1.jpg"
+    "image": "prodsnim/Mpants1.jpg",
+    "gender": "men",
+    "type": "trousers"
     },
     {
-    "id": "Mpants2",
+    "id": "2",
     "name": "Men Gray Trousers",
     "description": "Men's gray trousers. Made from the finest materials, perfect for everyday use",
     "price": 59.99,
-    "image": "prodsnim/Mpants2.jpg"
+    "image": "prodsnim/Mpants2.jpg",
+    "gender": "men",
+    "type": "trousers"
     },
     {
-    "id": "Mpants3",
+    "id": "3",
     "name": "Men Beige Baggy Trousers",
     "description": "Men's beige trousers. Made from the finest materials, perfect for everyday use",
     "price": 69.99,
-    "image": "prodsnim/Mpants3.jpg"
+    "image": "prodsnim/Mpants3.jpg",
+    "gender": "men",
+    "type": "trousers"
     },
     {
-    "id": "Mpants4",
+    "id": "4",
     "name": "Men White Formal Trousers",
     "description": "Men's white trousers. Made from the finest materials, perfect for everyday use",
     "price": 55.99,
-    "image": "prodsnim/Mpants4.jpg"
+    "image": "prodsnim/Mpants4.jpg",
+    "gender": "men",
+    "type": "trousers"
     },
     {
-    "id": "Mpants5",
+    "id": "5",
     "name": "Men Striped Trousers",
     "description": "Men's striped trousers. Made from the finest materials, perfect for everyday use",
     "price": 45.99,
-    "image": "prodsnim/Mpants5.jpg"
+    "image": "prodsnim/Mpants5.jpg",
+    "gender": "men",
+    "type": "trousers"
+    },
+    {
+    "id": "6",
+    "name": "Men Gray Polo Shirt",
+    "description": "Men's Gray Polo Shirt. Made from the finest materials, perfect for everyday use",
+    "price": 35.99,
+    "image": "prodsnim/Mshirt1.jpg",
+    "gender": "men",
+    "type": "shirt"
     }
 ]
