@@ -10,9 +10,9 @@
     },
     {
     "id": "2",
-    "name": "Men Gray Trousers",
-    "description": "Men's gray trousers. Made from the finest materials, perfect for everyday use",
-    "price": 59.99,
+    "name": "Men Gray Formal Trousers",
+    "description": "Men's Gray Formal Trousers. Made from the finest materials, perfect for everyday use",
+    "price": 65.99,
     "image": "prodsnim/Mpants2.jpg",
     "gender": "men",
     "type": "trousers"
@@ -21,7 +21,7 @@
     "id": "3",
     "name": "Men Beige Baggy Trousers",
     "description": "Men's beige trousers. Made from the finest materials, perfect for everyday use",
-    "price": 69.99,
+    "price": 55.99,
     "image": "prodsnim/Mpants3.jpg",
     "gender": "men",
     "type": "trousers"
@@ -30,7 +30,7 @@
     "id": "4",
     "name": "Men White Formal Trousers",
     "description": "Men's white trousers. Made from the finest materials, perfect for everyday use",
-    "price": 55.99,
+    "price": 65.99,
     "image": "prodsnim/Mpants4.jpg",
     "gender": "men",
     "type": "trousers"
@@ -48,9 +48,46 @@
     "id": "6",
     "name": "Men Gray Polo Shirt",
     "description": "Men's Gray Polo Shirt. Made from the finest materials, perfect for everyday use",
-    "price": 35.99,
+    "price": 25.99,
     "image": "prodsnim/Mshirt1.jpg",
     "gender": "men",
     "type": "shirt"
+    },
+    {
+    "id": "7",
+    "name": "Men Dark Gray Shirt",
+    "description": "Men's Dark Gray Shirt. Made from the finest materials, perfect for everyday use",
+    "price": 30.99,
+    "image": "prodsnim/Mshirt2.jpg",
+    "gender": "men",
+    "type": "shirt"
+    },
+    {
+    "id": "8",
+    "name": "Men Black Formal Shirt",
+    "description": "Men's Black Formal Shirt. Made from the finest materials, perfect for everyday use",
+    "price": 39.99,
+    "image": "prodsnim/Mshirt3.jpg",
+    "gender": "men",
+    "type": "shirt"
+    },
+    {
+    "id": "9",
+    "name": "Men White Formal Shirt",
+    "description": "Men's White Formal Shirt. Made from the finest materials, perfect for everyday use",
+    "price": 39.99,
+    "image": "prodsnim/Mshirt4.jpg",
+    "gender": "men",
+    "type": "shirt"
+    },
+    {
+    "id": "9",
+    "name": "Men Navy Polo Shirt",
+    "description": "Men's Navy Polo Shirt. Made from the finest materials, perfect for everyday use",
+    "price": 25.99,
+    "image": "prodsnim/Mshirt5.jpg",
+    "gender": "men",
+    "type": "shirt"
     }
+    
 ]
