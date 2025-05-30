@@ -163,9 +163,9 @@ nav ul li a {
   filter:invert(0);
 }
 .notmainnav p{
-  color: black
+  color: black;
 }
-.notmainnav .titleblock {
+.notmainnav .titleblock{
   margin-left: 50px;
 }
 /*////////////not main navbar///////////////*/
@@ -616,7 +616,6 @@ z-index: -1;
 .products .listProduct {
     margin-top:100px;
     border:1px solid purple;
-    margin-left
 }
 .listProduct {
     display: grid;
