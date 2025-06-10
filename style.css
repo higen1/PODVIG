@@ -165,9 +165,6 @@ nav ul li a {
 .notmainnav p{
   color: black;
 }
-.notmainnav .titleblock{
-  margin-left: 50px;
-}
 /*////////////not main navbar///////////////*/
 /*//////////////////////////////////////////////////NAVBARS/////////////////////////////////////////////////////////////////////////*/
 /*//////////////////////////////////////////////////DROPDOWN/////////////////////////////////////////////////////////////////////////*/
@@ -356,7 +353,7 @@ z-index: -1;
 
 
 #navcart {
-  background-color: #D7D3BF; /* White background with slight opacity */
+  background-color: #999891; /* White background with slight opacity */
   width: 100%;
   position: static;
   overflow: visible;
@@ -376,17 +373,16 @@ z-index: -1;
 }
 
 #cart-container {
-  position: fixed;
+  position: initial;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
-  background-color: #ECEBDE; /* White background */
+  background-color: #eee; /* White background */
   width: 100%;
-  height: 100vh;
   padding: 0;
   z-index: 1;
-  color: #333; /* Dark text */
+  color: #000; /* Dark text */
 }
 
 
@@ -404,11 +400,15 @@ z-index: -1;
 }
 
 .leftcolumn #cart-row {
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 ;
   width: 60vw;
   min-height: 70vh;
-  background-color: #C1BAA1; /* Light gray for contrast */
-  border: 5px solid #A59D84; /* Light border */
+  background-color: #eee; /* White background */
+  box-shadow: 0px 0px 8px 0.05px  black;
   border-radius: 12px;
   padding: 16px;
   overflow-y: auto;
@@ -421,26 +421,28 @@ z-index: -1;
 .rightcolumn #payoption {
   margin: 0 auto;
   width: 32vw;
-  min-height: 77vh;
-  background-color: #C1BAA1; /* Light gray for contrast */
-  border: 5px solid #A59D84; /* Light border */
+  min-height: 90vh;
+  background-color: #eee; /* White background */
+  box-shadow: 0px 0px 6px 0.05px  black;
   border-radius: 12px;
   padding: 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
 }
 
 .rightcolumn #payoption .cart-actions {
   text-align: center;
+;
 }
 
 .buttonstyle {
   display: inline-block;
   text-decoration: none;
-  color: #333;
+  color: #000;
   font-size: 1.1rem;
-  border: 3px solid #A59D84; /* Light button accent */
+  border: 3px solid #888781; /* Light button accent */
   padding: 10px 1.5vw;
   border-radius: 999px;
   margin: 10px;
@@ -455,6 +457,78 @@ z-index: -1;
   cursor: pointer;
 }
 /*/////////////////////////////////////////Cart CSS///////////////////////////////////////////////////////////////////////////*/
+.checkout-form {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .checkout-form h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            border-bottom: 1px solid #bcbaba;
+            padding-bottom: 5px;
+        }
+        .checkout-form label {
+            display: block;
+            margin-top: 12px;
+            font-size: 1.1rem;
+        }
+        .checkout-form input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #bcbaba;
+            border-radius: 16px;
+            border-width: 2px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .checkout-form button {
+            margin-top: 20px;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            background-color: var(--button-color);
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .checkout-form button:hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .cart-item {
+    display: flex;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+/* Optional: Better typography for product details */
+.cart-item h4 {
+    margin: 0 0 5px;
+    font-size: 1.1em;
+}
+
+.cart-item p {
+    margin: 0;
+    color: #333;
+    text-align: left;
+
+}
+
 /*////////////////////////////////////////GENDER PICK///////////////////////////////////////////////////////////////////////////*/
 .container-fm {
   display: flex;
@@ -617,7 +691,6 @@ z-index: -1;
 }
 .products .listProduct {
     margin-top:100px;
-    border:1px solid purple;
 }
 .listProduct {
     display: grid;
@@ -665,4 +738,102 @@ z-index: -1;
     font-weight: bold;
     margin-top: 5px;
 }
+
+.listProduct .name {
+  border: 1px solid purple;
+}
 /*////////////////////////////////////////PRODUCTS.HTML/////////////////////////////////////////////////////////////////*/
+/* ========== FILTER PANEL STYLES ========== */
+.filter-panel {
+  position: fixed;
+  top: 100px;
+  width: 100px;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease;
+  z-index: 999;
+
+}
+
+.dropdown-header {
+  border-bottom: 1px solid #ccc;
+  font-size: 20px;
+  text-align: left;
+}
+#filtertxt {
+  margin: 10px;
+}
+#typeOptions {
+  margin-top: 10px;
+}
+input[type="Checkbox"] {
+  appearance: none;
+}
+.dropdown-options {
+  transition: 0.3s ease-in-out;
+}
+.filter-panel {
+      width: 200px;
+      float: left;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+    }
+    .filters label,
+    .filters select,
+    .filters input {
+      display: block;
+      width: 100%;
+      
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    .products {
+      margin-left: 220px;
+    }
+        .gender-toggle-container {
+      margin: 15px 0;
+    }
+
+    .gender-toggle {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+      
+    }
+
+    .gender-toggle input[type="radio"] {
+      display: none;
+    }
+
+    .gender-toggle label {
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 400;
+      transition: font-weight 0.3s ease;
+      color: #666;
+    }
+    .gender-toggle label:hover {
+      font-weight: 550;
+      color:#444;
+    }
+
+    .gender-toggle input[id="male"]:checked + label[for="male"] {
+      font-weight: 900;
+      color: black;
+    }
+
+    .gender-toggle input[id="female"]:checked + label[for="female"] {
+      font-weight: 900;
+      color: black;
+    }
+
+    .gender-divider {
+      position: relative;
+      width: 1px;
+      height: 24px;
+      background-color: #ccc;
+    }
+    .dropdown-options input[id=shirt]:checked {
+      font-weight: 900;
+    }

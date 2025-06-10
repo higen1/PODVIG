@@ -1,66 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Page</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <div class="products">
-        <nav class="notmainnav">
-            <a href="main.html" class="titleblock">
-            <img src="/assets/logo.svg" class="logo">
-            <div class="titlesubtitle">
-            <p>PODVIG</p>
-            <p id="slogan">Beyond the Standard.</p>
-        </div>
-        </a>
-            <ul>
-                <li><a class="navbutton" href="aboutus.html">ABOUT US</a></li>
-                <li><a class="navbutton" href="contacts.html">CONTACTS</a></li>
-                <li><a href="cart.html"><img src="/assets/cart.svg" class="cartimg"></a></li>
-            </ul>
-    </nav>
-        <div class="listProduct">
-        </div>
-        </div>
+  <div class="container">
+    <div class="page-overlay" onclick="toggleFilterPanel()"></div>
+    <nav class="notmainnav">
+  <a href="main.html" class="titleblock">
+    <img src="/assets/logo.svg" class="logo">
+    <div class="titlesubtitle">
+      <p>PODVIG</p>
+      <p id="slogan">Beyond the Standard.</p>
+    </div>
+  </a>
+  <ul>
+    <li><a class="navbutton" href="aboutus.html">ABOUT US</a></li>
+    <li><a class="navbutton" href="contacts.html">CONTACTS</a></li>
+    <li><a href="cart.html"><img src="/assets/cart.svg" class="cartimg"></a></li>
+  </ul>
+</nav>
+
+    <div class="filter-panel">
+  <div class="filters">
+    <h1 id="filtertxt">FILTERS</h1>
+    
+    <!-- Gender Toggle Switch -->
+    <div class="gender-toggle-container">
+      <div class="gender-toggle">
+        <input type="radio" name="gender" value="men" id="male" onchange="filterProducts()" />
+        <label for="male">MALE</label>
+        <div class="gender-divider"></div>
+        <input type="radio" name="gender" value="women" id="female" onchange="filterProducts()" />
+        <label for="female">FEMALE</label>
+      </div>
     </div>
 
-    
+    <!-- Type Dropdown -->
+    <div class="dropdown">
+      <div class="dropdown-header" onclick="toggleDropdown('type')">
+        CATEGORIES
+      </div>
+      <div class="dropdown-options" id="typeOptions">
+        <label>
+          <input type="checkbox" name="type" value="shirt" id="shirt" onchange="filterProducts()" />
+          SHIRT
+        </label>
+        <label>
+          <input type="checkbox" name="type" value="trousers" id="trousers" onchange="filterProducts()" />
+          TROUSERS
+        </label>
+      </div>
+    </div>
 
-    <script>
-        let products = null;
-        // get datas from file json
-        fetch('products.json')
-            .then(response => response.json())
-            .then(data => {
-                products = data;
-                addDataToHTML();
-        })
 
-        function addDataToHTML(){
-    // remove datas default from HTML
-        let listProductHTML = document.querySelector('.listProduct');
+</div>
+</div>
+    <div class="products">
+      <div class="listProduct"></div>
+    </div>
+  </div>
 
-        // add new datas
-        if(products != null) // if has data
-        {
-            products.forEach(product => {
-                let newProduct = document.createElement('a');
-                newProduct.href = '/detail.html?id=' + product.id;
-                newProduct.classList.add('item');
-                newProduct.innerHTML = 
-                `<img src="${product.image}" alt="">
-                <h2>${product.name}</h2>
-                <div class="price">$${product.price}</div>`;
-                listProductHTML.appendChild(newProduct);
+  <script>
+function toggleDropdown(type) {
+  const options = document.getElementById(type + 'Options');
+  options.style.display = options.style.display === 'none' ? 'block' : 'none';
+}
 
-            });
-        }
-    }
+const listProductHTML = document.querySelector(".listProduct");
+let products = [];
 
-    </script>
+fetch("products.json")
+  .then((res) => res.json())
+  .then((data) => {
+    products = data;
+    addDataToHTML(products);
+  });
+
+function filterProducts() {
+  // Get selected gender (only one can be selected now)
+  const selectedGender = document.querySelector("input[name='gender']:checked");
+  const selectedGenderValue = selectedGender ? selectedGender.value : null;
+  
+  const selectedTypes = Array.from(document.querySelectorAll("input[name='type']:checked")).map(cb => cb.value);
+
+  const filtered = products.filter(product => {
+    const genderMatch = !selectedGenderValue || product.gender === selectedGenderValue;
+    const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(product.type);
+    return genderMatch && typeMatch;
+  });
+
+  addDataToHTML(filtered);
+}
+
+function addDataToHTML(data) {
+  listProductHTML.innerHTML = "";
+  if (data.length === 0) {
+    listProductHTML.innerHTML = "<p>No products found.</p>";
+    return;
+  }
+
+  data.forEach((product) => {
+    let item = document.createElement("a");
+    item.href = "/detail.html?id=" + product.id;
+    item.classList.add("item");
+    item.innerHTML = `
+      <img src="${product.image}" alt="">
+      <h2>${product.name}</h2>
+      <div class="price">$${product.price}</div>`;
+    listProductHTML.appendChild(item);
+  });
+}
+</script>
 </body>
 </html>
